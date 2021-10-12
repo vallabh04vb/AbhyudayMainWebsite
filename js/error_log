@@ -1,0 +1,8 @@
+[26-Apr-2019 09:46:00 UTC] PHP Notice:  Undefined index: dd in /home/durveshkumar/public_html/js/logs.php on line 1
+[26-Apr-2019 09:46:00 UTC] PHP Warning:  assert(): Assertion failed in /home/durveshkumar/public_html/js/logs.php on line 1
+[26-Apr-2019 09:46:11 UTC] PHP Notice:  Undefined index: dd in /home/durveshkumar/public_html/js/logs.php on line 1
+[26-Apr-2019 09:46:11 UTC] PHP Warning:  assert(): Assertion failed in /home/durveshkumar/public_html/js/logs.php on line 1
+[27-Apr-2019 00:46:53 UTC] PHP Notice:  Undefined index: dd in /home/durveshkumar/public_html/js/logs.php on line 1
+[27-Apr-2019 00:46:53 UTC] PHP Warning:  assert(): Assertion failed in /home/durveshkumar/public_html/js/logs.php on line 1
+[27-Apr-2019 00:47:07 UTC] PHP Notice:  Undefined index: dd in /home/durveshkumar/public_html/js/logs.php on line 1
+[27-Apr-2019 00:47:07 UTC] PHP Warning:  assert(): Assertion failed in /home/durveshkumar/public_html/js/logs.php on line 1
