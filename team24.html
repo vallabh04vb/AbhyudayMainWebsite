@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="UTF-8" />
+    <title>Abhyuday | IIT Bombay</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/header.css" />
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="images/black1.png" type="image/x-icon" />
+    <link rel="icon" href="images/black1.png" type="image/x-icon" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Bungee"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- --------styles---------- -->
+    <style>
+      h3 {
+        font-family: "Poetsen One", sans-serif;
+      }
+      h4 {
+        color: black;
+      }
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      @font-face {
+        font-family: "Samarkan";
+        src: url("Samarkan-Font-1/SAMAN___.TTF") format("truetype");
+      }
+      @font-face {
+        font-family: "Exo";
+        src: url(./fonts/Exo2.0-Medium.otf);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .wrapper {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 80rem;
+        text-align: center;
+        margin-top: 120px;
+      }
+      .cols {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      /* Individual column style */
+      .col {
+        width: calc(20% - 2rem);
+        margin: 3rem 3rem 0 3rem;
+        cursor: pointer;
+      }
+      /* Styles for the main container holding profile cards */
+      .main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        padding: 200px;
+      }
+
+      /* Styles for individual profile cards */
+      .profile-card {
+        position: relative;
+        font-family: sans-serif;
+        width: 220px;
+        height: 220px;
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: 20%;
+        box-shadow: 0 0 22px #3336;
+        transition: 0.6s;
+        margin: 0px;
+      }
+
+      /* Hover effect on profile cards */
+      .profile-card:hover {
+        border-radius: 10px;
+        height: 260px;
+      }
+
+      /* Styles for the profile image within a card */
+      .profile-card .img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: 0.6s;
+        z-index: 99;
+      }
+
+      /* Hover effect on the profile image */
+      .profile-card:hover .img {
+        transform: translateY(-60px);
+      }
+
+      /* Styles for the actual image inside the profile image container */
+      .img img {
+        width: 100%;
+        border-radius: 50%;
+        box-shadow: 0 0 22px #3336;
+        transition: 0.6s;
+      }
+
+      /* Hover effect on the image inside the profile card */
+      .profile-card:hover img {
+        border-radius: 10px;
+      }
+
+      /* Styles for the caption (name, role, and social links) on a profile card */
+      .caption {
+        text-align: center;
+        transform: translateY(-80px);
+        opacity: 0;
+        transition: 0.6s;
+      }
+
+      /* Hover effect on the caption */
+      .profile-card:hover .caption {
+        margin-top: 2px;
+        opacity: 1;
+      }
+
+      /* Styles for the name in the caption */
+      .caption h3 {
+        font-size: 21px;
+        font-family: sans-serif;
+      }
+
+      /* Styles for the role in the caption */
+      .caption p {
+        font-size: 15px;
+        color: #0c52a1;
+        font-family: sans-serif;
+        margin: 2px 0 9px 0;
+      }
+
+      /* Styles for social links in the caption */
+      .caption .social-links a {
+        color: #333;
+        margin-right: 15px;
+        font-size: 21px;
+        transition: 0.6s;
+      }
+
+      /* Hover effect on social links */
+      .social-links a:hover {
+        color: #0c52a1;
+      }
+
+      h1 {
+        text-transform: capitalize;
+        letter-spacing: 0.3px;
+        font-weight: 700;
+        font-size: clamp(2.9375rem, 2.75rem + 0.75vw, 3rem);
+        background-color: #005baa;
+        background-image: linear-gradient(40deg, #48a7fa, #63b1f5);
+        background-size: 100%;
+        background-repeat: repeat;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+        text-align: center;
+        margin-top: -10px; /* Adjust the margin to your preference */
+        margin-bottom: 0px;
+        font-family: "Samarkan", cursive;
+      }
+      /* Media query for adjusting column width on smaller screens */
+      @media screen and (max-width: 48rem) {
+        .col {
+          width: calc(50% - 2rem);
+        }
+      }
+      /* Media query for making columns full width on even smaller screens */
+      @media screen and (max-width: 32rem) {
+        .col {
+          width: 100%;
+          margin: 0 0 9rem 0;
+        }
+      }
+      @media screen and (max-width: 300px) {
+        .profile-card:hover {
+          border-radius: 10px;
+          height: 260px;
+        }
+      }
+      @media screen and (max-width: 400px) {
+        .profile-card {
+          padding: 1rem;
+        }
+        .profile-card:hover {
+          border-radius: 10px;
+          height: 280px;
+        }
+        .caption {
+          transform: translateY(-90px);
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .profile-card:hover {
+          border-radius: 10px;
+          height: 300px;
+        }
+        .main {
+          justify-content: flex-end; /* Center cards on smaller screens */
+          padding: 1000px;
+        }
+        .profile-card {
+          width: 70%; /* Adjust the width for smaller screens */
+          margin: 0 0 100px; /* Add margin for spacing between cards */
+          height: 65vw;
+          right: -16%;
+        }
+        .wrapper {
+          width: 90%;
+          margin: 0 auto;
+          max-width: 80rem;
+          text-align: center;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        .profile-card {
+          justify-content: flex-start;
+          justify-content: flex-end;
+        }
+        h1 {
+          margin-top: 80px; /* Add some margin to separate the heading from the columns */
+        }
+        h3 {
+          margin-top: 0.75em;
+        }
+        .front {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+      @media screen and (max-width: 767px) {
+        .col {
+          margin: -0.1rem -0.1rem;
+          flex-direction: column;
+          text-align: center;
+          margin-bottom: 60px;
+        }
+        h1 {
+          margin-bottom: 30px;
+          margin-top: 60px;
+        }
+        h3 {
+          margin-top: -99px; /* Adjust margin-top to move the h3 up */
+          margin-bottom: 0; /* Ensure no extra space below the h3 */
+        }
+      }
+      .l-header {
+        transition: background-color 0.5s, opacity 0.5s;
+      }
+      .nav__menu {
+        opacity: 1;
+      }
+
+      .mycontainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        margin: 0 auto;
+      }
+      .child {
+        width: calc(20% - 2rem);
+        background-color: white;
+        display: flex;
+        justify-content: center;
+      }
+      .img {
+        width: 90%;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body id="top">
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+      <div class="header-logo">
+        <a class="site-logo" href="index.html">
+          <img
+            src="images/abhyuday2.png"
+            alt="Homepage"
+            style="height: auto; transform: scale(0.9) translateX(22px)"
+          />
+        </a>
+      </div>
+      <!-- end header-logo -->
+
+      <nav class="header-nav">
+        <a href="#0" class="header-nav__close" title="close"
+          ><span>Close</span></a
+        >
+
+        <div class="header-nav__content">
+          <h3 style="font-size: 15px">Abhyuday</h3>
+
+          <ul class="header-nav__list">
+            <li class="current"><a href="index.html" title="home">Home</a></li>
+            <!-- <li><a  class="smoothscroll" href="index.html#about" title="about">About</a></li> -->
+            <li>
+              <a href="http://abhyudayiitb.org/socialfest" title="social fest"
+                >Social Fest</a
+              >
+            </li>
+            <li><a href="events.html" title="events">Events</a></li>
+            <li><a href="campaigns.html" title="campaigns">Campaigns</a></li>
+            <li>
+              <a href="competitions.html" title="competitions">Competitions</a>
+            </li>
+            <li><a href="sponsors.html" title="sponsers">Sponsors</a></li>
+            <li><a href="team24.html" title="team">Team</a></li>
+            <!-- <li><a  class="smoothscroll" href="#contact" title="contact">Contact</a></li> -->
+          </ul>
+
+          <ul class="header-nav__social">
+            <li>
+              <a href="https://www.facebook.com/abhyuday.iitb/" target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/Abhyuday_IITB?s=07" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/iitbombay_abhyuday/"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/abhyuday-iit-bombay/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <!-- end header-nav__content -->
+      </nav>
+      <!-- end header-nav -->
+
+      <a class="header-menu-toggle" href="#0">
+        <span class="header-menu-icon"></span>
+      </a>
+    </header>
+    <!-- end s-header -->
+
+    <div class="wrapper">
+      <!-- ------Overall--------- -->
+
+      <h1>Overall Coordinators</h1>
+      <section id="MECHANICAL" class="MECHANICAL">
+        <div class="cols">
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img src="images/24team/Shlok Zanwar.jpeg" />
+                  </div>
+                  <div class="caption">
+                    <p>Overall Coordinator</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      9371025117
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:shlok.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/shlok-zanwar-67a506228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+                <h3>Shlok zanwar</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img
+                      src="images/24team/Suranjan Lahane-fotor-20240511154112.jpg"
+                    />
+                  </div>
+                  <div class="caption">
+                    <p>Overall Coordinator</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      9422017526
+                    </h4>
+
+                    <div class="social-links">
+                      <a href="mailto:suranjan.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/suranjan-lahane-iitb/"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+                <h3>Suranjan Lahane</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------Campaigns--------- -->
+      <h1>Campaigns</h1>
+      <section>
+        <div class="cols">
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img
+                      src="images/24team/_rahul dara-fotor-20240511154717.jpg"
+                    />
+                  </div>
+                  <div class="caption">
+                    <p>Campaigns Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      9001565305
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:rahuldara.abhyuday @gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/rahul-dara-4ba4a429b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+                <h3>Rahul Dara</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img
+                      src="images/24team/Siddhant Jebale-fotor-20240511154430.jpg"
+                    />
+                  </div>
+                  <div class="caption">
+                    <p>Campaigns Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      8530713777
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:siddhant.abyudayiitb@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/siddhant-jebale-448774291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3>Siddhant Jebale</h3>
+          </div>
+
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img src="images/24team/maya1-fotor-20240511154947.jpg" />
+                  </div>
+                  <div class="caption">
+                    <p>Campaigns Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      9950619827
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:maya.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/maya-choudhary-176bbb2a8/"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Maya Choudhary</h3>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img src="images/24team/kedar-fotor-2024051116212.jpg" />
+                  </div>
+                  <div class="caption">
+                    <p>Campaigns Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      9015464532
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:kedarsharma.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/kedar-sharma-67aa9b253?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Kedar Sharma</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------Events & Fellowships--------- -->
+      <h1>Events and Fellowships</h1>
+      <section>
+        <div class="cols">
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img
+                      src="images/24team/_Samyak Zade-fotor-2024051115570.jpg"
+                    />
+                  </div>
+                  <div class="caption">
+                    <p>Events Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      9067203066
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:samyakz.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/samyak-zade-26634b257/"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Samyak Zade</h3>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img src="images/24team/ishita-fotor-2024051115592.jpg" />
+                  </div>
+                  <div class="caption">
+                    <p>Events Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      9929054694
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:ishita.abhyuday15@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/ishita-gurjar-767659261?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app
+                                  "
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Ishita Gurjar</h3>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img
+                      src="images/24team/_Manasvi Kushwaha-fotor-2024051116527.jpg"
+                    />
+                  </div>
+                  <div class="caption">
+                    <p>Events Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      8962675833
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:manasvikushwaha17@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/manasvi-kushwaha-32191a265/"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Manasvi Kushwaha</h3>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img
+                      src="images/24team/_Sunny Godara-fotor-2024051116811.jpg"
+                    />
+                  </div>
+                  <div class="caption">
+                    <p>Events Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      8852895497
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:sunnygodara.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="http://linkedin.com/in/sunny-godara-97b795279"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Sunny Godara</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------Marketing--------- -->
+      <h1>Marketing</h1>
+      <section>
+        <div class="cols">
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img
+                      src="images/24team/Pranjal Khatod-fotor-20240511161050.jpg"
+                    />
+                  </div>
+                  <div class="caption">
+                    <p>Marketing Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      9307273816
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:pranjal.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="http://linkedin.com/in/pranjal-khatod-9485461a7"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Pranjal Khatod</h3>
+            </div>
+          </div>
+
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img src="images/24team/akshat-fotor-20240511161313.jpg" />
+                  </div>
+                  <div class="caption">
+                    <p>Marketing Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      7505834725
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:akshat.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/akshat-jain-ab49b524a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Akshat Jain</h3>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img
+                      src="images/24team/Prathu Tandon-fotor-20240511161552.jpg"
+                    />
+                  </div>
+                  <div class="caption">
+                    <p>Marketing Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      7300901300
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:prathu.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/prathu-tandon-601875251/"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Prathu Tandon</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------Media & PR--------- -->
+      <h1>Media and Public Relations</h1>
+      <section>
+        <div class="cols">
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img
+                      src="images/24team/- Ramasamy Pramod Sai-fotor-2024051116196.jpg"
+                    />
+                  </div>
+                  <div class="caption">
+                    <p>Media Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      8919642307
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:pramod.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/pramod-sai-972b11289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Pramod Sai</h3>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img src="images/24team/rithika-fotor-20240511162249.jpg" />
+                  </div>
+                  <div class="caption">
+                    <p>Media Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      9599265453
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:ritika.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/ritika-sirohiya-337035279?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Ritika</h3>
+            </div>
+          </div>
+
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img src="images/24team/garvit-fotor-20240511163045.jpg" />
+                  </div>
+                  <div class="caption">
+                    <p>Media Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      9664169359
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:"><i class="fas fa-envelope"></i></a>
+                      <a
+                        href="https://www.linkedin.com/in/garvit-kulhari-7164b8259/?originalSubdomain=in"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Garvit Kulhari</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------Web--------- -->
+      <h1>Web</h1>
+      <section>
+        <div class="cols">
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img src="images/24team/uday-fotor-2024030252618.jpeg" />
+                  </div>
+                  <div class="caption">
+                    <p>Web Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      9381406475
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:udayyennampelly0@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/uday-yennampelly-700969252/"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Uday Sahu</h3>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img src="images/24team/rks-fotor-20240511163516.jpg" />
+                  </div>
+                  <div class="caption">
+                    <p>Web Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      9030854787
+                    </h4>
+
+                    <div class="social-links">
+                      <a href="mailto:komalsai.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/komal-sai-ranga/"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Komal Sai</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------Competitions--------- -->
+      <h1>Competitions</h1>
+      <section>
+        <div class="cols">
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img
+                      src="images/24team/_Ramya Ranjan Behera-fotor-20240511164240.jpg"
+                    />
+                  </div>
+                  <div class="caption">
+                    <p>Competitions Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      8456961919
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:ramya.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/ramya-ranjan-behera-1a0a5325a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Ramya Ranjan</h3>
+            </div>
+          </div>
+
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img src="images/24team/hardik-fotor-20240511163953.jpg" />
+                  </div>
+                  <div class="caption">
+                    <p>Competitions Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      8209205908
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:hardik.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/hardik-agrawal-266b02260/?originalSubdomain=in"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Hardik Agarwal</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------Operations--------- -->
+      <h1>Operations</h1>
+      <section>
+        <div class="cols">
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img
+                      src="images/24team/shubham-fotor-20240511164542.jpg "
+                    />
+                  </div>
+                  <div class="caption">
+                    <p>Operations Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      9540930439
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:shubhamkamwal.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/shubham-kamwal-59a608266/?originalSubdomain=in"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Shubham</h3>
+            </div>
+          </div>
+
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img
+                      src="images/24team/prashant-fotor-20240511165017.jpg"
+                    />
+                  </div>
+                  <div class="caption">
+                    <p>Operations Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      9696721493
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:prashantshukla.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/prashantmanishukla/?originalSubdomain=in"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Prashant</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------Creatives--------- -->
+      <h1>Creatives</h1>
+      <section>
+        <div class="cols">
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img src="images/24team/tanvi-fotor-20240511165214.jpg " />
+                  </div>
+                  <div class="caption">
+                    <p>Creatives Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      8605661520
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:tanvi.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/tanvi-makhar-086323258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Tanvi Makhar</h3>
+            </div>
+          </div>
+
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front">
+                <div class="profile-card">
+                  <div class="img">
+                    <img
+                      src="images/24team/rohit singh-fotor-2024051117282.jpg"
+                    />
+                  </div>
+                  <div class="caption">
+                    <p>Creatives Manager</p>
+                    <h4 style="font-family: 'Amatic SC', cursive">
+                      8829914374
+                    </h4>
+                    <div class="social-links">
+                      <a href="mailto:rohitsingh.abhyuday@gmail.com"
+                        ><i class="fas fa-envelope"></i
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/rohit-singh-rawat-222611281?trk=contact-info"
+                        target="_blank"
+                        ><i class="fab fa-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Rohit Singh</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+      <div id="loader">
+        <img
+          src="images/untitled (5)_animated.svg"
+          alt=""
+          style="height: 100px"
+        />
+        <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+      </div>
+    </div>
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/owl.js"></script>
+  </body>
+</html>
